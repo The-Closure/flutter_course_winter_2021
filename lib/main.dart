@@ -19,48 +19,94 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Center(
-          child: Container(
-            child: Padding(
-              padding: EdgeInsets.all(16),
-              child: Text(
-                'ZARA',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 48,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 30,
-                  shadows: [
-                    Shadow(
-                      color: Colors.black,
-                      blurRadius: 1,
-                      offset: Offset(10, 20),
-                    ),
-                    Shadow(
-                      color: Colors.black,
-                      blurRadius: 1,
-                      offset: Offset(-10, -20),
-                    ),
-                  ],
+    return Scaffold(
+      appBar: AppBar(),
+      body: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        // mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(
+            height: (MediaQuery.of(context).size.height / 2) - (75 / 2),
+            // padding: const EdgeInsets.symmetric(vertical: 80.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                FlutterLogo(
+                  size: 50,
+                  textColor: Colors.red,
+                  duration: Duration(seconds: 5),
+                  curve: Curves.easeInToLinear,
                 ),
-              ),
-            ),
-            // color: Colors.indigo, // don't use with box decoration
-            // width: 300,
-            // height: 300,
-            padding: EdgeInsets.all(30),
-            margin: EdgeInsets.all(16),
-            // alignment: Alignment.center, don't use with center widget
-            decoration: BoxDecoration(
-              color: Colors.indigo,
-              border: Border.all(
-                  color: Colors.black, style: BorderStyle.solid, width: 6),
-              borderRadius: BorderRadius.circular(30),
+                SizedBox(
+                  height: 500,
+                ),
+                FlutterLogo(
+                  size: 50,
+                  textColor: Colors.red,
+                  duration: Duration(seconds: 5),
+                  curve: Curves.easeInToLinear,
+                ),
+              ],
             ),
           ),
-        ),
+          SizedBox(
+            width: MediaQuery.of(context).size.width / 5,
+            // padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment
+                  .center, // don't use stretch when using space* in row main axis alignment
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                FlutterLogo(
+                  size: 50,
+                  textColor: Colors.red,
+                  duration: Duration(seconds: 5),
+                  curve: Curves.easeInToLinear,
+                ),
+              ],
+            ),
+          ),
+          Container(
+            color: Colors.red,
+            height: (MediaQuery.of(context).size.height / 2) - (75 / 2),
+
+            // padding: const EdgeInsets.all(8.0),
+            child: Column(
+              // mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                FlutterLogo(
+                  size: 50,
+                  textColor: Colors.red,
+                  duration: Duration(seconds: 5),
+                  curve: Curves.easeInToLinear,
+                ),
+                FlutterLogo(
+                  size: 50,
+                  textColor: Colors.red,
+                  duration: Duration(seconds: 5),
+                  curve: Curves.easeInToLinear,
+                ),
+                FlutterLogo(
+                  size: 50,
+                  textColor: Colors.red,
+                  duration: Duration(seconds: 5),
+                  curve: Curves.easeInToLinear,
+                ),
+                Spacer(),
+                FlutterLogo(
+                  size: 50,
+                  textColor: Colors.red,
+                  duration: Duration(seconds: 5),
+                  curve: Curves.easeInToLinear,
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
