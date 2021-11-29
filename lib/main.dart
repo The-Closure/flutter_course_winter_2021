@@ -15,58 +15,51 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-  Home({Key? key}) : super(key: key);
-  List<String> langs = [
-    'java',
-    'flutter',
-    'scala',
-    'kotlin',
-    'ruby',
-    'cpp',
-    'cs',
-    'js',
-    'go',
-    'py',
-    'vue'
-  ];
+  const Home({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        children: [
-          Expanded(
-            flex: 2,
-            child: Container(
-              child: Text('data'),
-              width: double.infinity,
-              height: double.minPositive,
-              color: Colors.red,
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4, childAspectRatio: 0.5),
-              scrollDirection: Axis.vertical,
-              itemCount: langs.length,
-              itemBuilder: (ctxt, index) {
-                return Container(
-                  margin: EdgeInsets.all(16),
-                  alignment: Alignment.center,
-                  color: Colors.indigo,
-                  width: 100,
-                  child: Text(
-                    langs[index],
-                    // overflow: TextOverflow.visible,
-                    style: TextStyle(fontSize: 32, color: Colors.white),
-                  ),
-                );
-              },
-            ),
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+                margin: EdgeInsets.all(8),
+                width: double.infinity,
+                height: 200,
+                color: Colors.indigo),
+            Container(
+                margin: EdgeInsets.all(8),
+                width: double.infinity,
+                child: Icon(
+                  Icons.add_comment_sharp,
+                  color: Colors.white,
+                  size: 32,
+                  // semanticLabel: 'message',
+                ),
+                height: 200,
+                color: Colors.indigo),
+            Container(
+                child: Image.asset(
+                  'images/nature.jpg',
+                  fit: BoxFit.cover,
+                ),
+                margin: EdgeInsets.all(8),
+                width: double.infinity,
+                height: 400,
+                color: Colors.indigo),
+            Container(
+                child: Image.network(
+                  'https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80',
+                  fit: BoxFit.fill,
+                ),
+                margin: EdgeInsets.all(8),
+                width: double.infinity,
+                height: 400,
+                color: Colors.indigo),
+          ],
+        ),
       ),
     );
   }
