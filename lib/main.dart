@@ -15,95 +15,55 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
-
+  Home({Key? key}) : super(key: key);
+  List<String> langs = [
+    'java',
+    'flutter',
+    'scala',
+    'kotlin',
+    'ruby',
+    'cpp',
+    'cs',
+    'js',
+    'go',
+    'py',
+    'vue'
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        // mainAxisSize: MainAxisSize.min,
+      body: Column(
         children: [
-          SizedBox(
-            height: (MediaQuery.of(context).size.height / 2) - (75 / 2),
-            // padding: const EdgeInsets.symmetric(vertical: 80.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                FlutterLogo(
-                  size: 50,
-                  textColor: Colors.red,
-                  duration: Duration(seconds: 5),
-                  curve: Curves.easeInToLinear,
-                ),
-                SizedBox(
-                  height: 500,
-                ),
-                FlutterLogo(
-                  size: 50,
-                  textColor: Colors.red,
-                  duration: Duration(seconds: 5),
-                  curve: Curves.easeInToLinear,
-                ),
-              ],
+          Expanded(
+            flex: 2,
+            child: Container(
+              child: Text('data'),
+              width: double.infinity,
+              height: double.minPositive,
+              color: Colors.red,
             ),
           ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width / 5,
-            // padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment
-                  .center, // don't use stretch when using space* in row main axis alignment
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                FlutterLogo(
-                  size: 50,
-                  textColor: Colors.red,
-                  duration: Duration(seconds: 5),
-                  curve: Curves.easeInToLinear,
-                ),
-              ],
-            ),
-          ),
-          Container(
-            color: Colors.red,
-            height: (MediaQuery.of(context).size.height / 2) - (75 / 2),
-
-            // padding: const EdgeInsets.all(8.0),
-            child: Column(
-              // mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                FlutterLogo(
-                  size: 50,
-                  textColor: Colors.red,
-                  duration: Duration(seconds: 5),
-                  curve: Curves.easeInToLinear,
-                ),
-                FlutterLogo(
-                  size: 50,
-                  textColor: Colors.red,
-                  duration: Duration(seconds: 5),
-                  curve: Curves.easeInToLinear,
-                ),
-                FlutterLogo(
-                  size: 50,
-                  textColor: Colors.red,
-                  duration: Duration(seconds: 5),
-                  curve: Curves.easeInToLinear,
-                ),
-                Spacer(),
-                FlutterLogo(
-                  size: 50,
-                  textColor: Colors.red,
-                  duration: Duration(seconds: 5),
-                  curve: Curves.easeInToLinear,
-                ),
-              ],
+          Expanded(
+            flex: 2,
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4, childAspectRatio: 0.5),
+              scrollDirection: Axis.vertical,
+              itemCount: langs.length,
+              itemBuilder: (ctxt, index) {
+                return Container(
+                  margin: EdgeInsets.all(16),
+                  alignment: Alignment.center,
+                  color: Colors.indigo,
+                  width: 100,
+                  child: Text(
+                    langs[index],
+                    // overflow: TextOverflow.visible,
+                    style: TextStyle(fontSize: 32, color: Colors.white),
+                  ),
+                );
+              },
             ),
           ),
         ],
