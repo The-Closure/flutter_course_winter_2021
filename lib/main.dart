@@ -11,7 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SecondPage(),
+      routes: {
+        'dismissPage': (_) => SecondPage(),
+        'GesPage': (_) => FirstPage()
+      },
+      initialRoute: 'GesPage',
     );
   }
 }
