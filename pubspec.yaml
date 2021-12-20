@@ -23,6 +23,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  http: ^0.13.4
+  bloc: ^8.0.1
+  
 
 
   cupertino_icons: ^1.0.2
