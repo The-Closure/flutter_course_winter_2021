@@ -25,6 +25,7 @@ dependencies:
     sdk: flutter
   http: ^0.13.4
   bloc: ^8.0.1
+  flutter_bloc: ^8.0.0
   
 
 
