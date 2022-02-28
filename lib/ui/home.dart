@@ -8,42 +8,61 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<bool?> checked = [true, true, false, false, true, false];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-          child: Column(
-        children: [
-          for (var i = 0; i < 5; i += 1)
-            Row(
-              children: [
-                Checkbox(
-                  onChanged: i == 4
-                      ? null
-                      : (bool? value) {
-                          setState(() {
-                            checked[i] = value;
-                          });
-                        },
-                  tristate: i == 1,
-                  value: checked[i],
-                  activeColor: Color(0xFF6200EE),
-                ),
-                Text(
-                  'Checkbox ${i + 1}',
-                  style: Theme.of(context)
-                      .textTheme
-                      .subtitle1
-                      ?.copyWith(color: i == 4 ? Colors.black38 : Colors.black),
-                ),
-              ],
-              mainAxisAlignment: MainAxisAlignment.center,
+        bottomNavigationBar: Hero(
+          tag: '1',
+          child: BottomAppBar(
+            color: Colors.indigo,
+            child: Container(
+              height: 50,
             ),
-        ],
-      )),
-    );
+          ),
+        ),
+        body: Builder(
+          builder: (ctxt) {
+            return Center(
+                child: TextButton(
+              child: Text('click me'),
+              onPressed: () {
+                showBottomSheet(
+                  // isDismissible: false,
+                  context: ctxt,
+                  builder: (context) {
+                    return Scaffold(
+                      body: Wrap(
+                        children: [
+                          Hero(
+                            tag: '1',
+                            child: ListTile(
+                                title: Text('Header',
+                                    style: TextStyle(fontSize: 24)),
+                                tileColor: Colors.indigo),
+                          ),
+                          ListTile(
+                            title: Text('Title 1'),
+                          ),
+                          ListTile(
+                            title: Text('Title 2'),
+                          ),
+                          ListTile(
+                            title: Text('Title 3'),
+                          ),
+                          ListTile(
+                            title: Text('Title 4'),
+                          ),
+                          ListTile(
+                            title: Text('Title 5'),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                );
+              },
+            ));
+          },
+        ));
   }
 }

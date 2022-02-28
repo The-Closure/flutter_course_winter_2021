@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_course_winter_2021/bloc/auth_bloc.dart';
-import 'package:flutter_course_winter_2021/ui/chip_home.dart';
 import 'package:flutter_course_winter_2021/ui/home.dart';
-import 'package:flutter_course_winter_2021/ui/radio_home.dart';
-import 'package:flutter_course_winter_2021/ui/sign_in.dart';
-import 'package:flutter_course_winter_2021/ui/switch_home.dart';
 
 void main() async {
   WidgetsFlutterBinding();
@@ -33,13 +29,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/signIn': (_) => SignIn(),
         '/home': (_) => Home(),
-        '/radio_home': (_) => RadioHome(),
-        '/switch_home': (_) => SwitchHome(),
-        '/chip_home': (_) => ChipHome(),
       },
-      initialRoute: '/chip_home',
+      initialRoute: '/home',
     );
   }
 }
