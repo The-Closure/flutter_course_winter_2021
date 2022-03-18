@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flutter_course_winter_2021">
    <application
+   android:name="androidx.multidex.MultiDexApplication" 
         android:label="flutter_course_winter_2021"
         android:icon="@mipmap/ic_launcher">
         <activity

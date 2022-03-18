@@ -29,6 +29,9 @@ dependencies:
   shared_preferences: ^2.0.13
   firebase_core: 
   firebase_messaging: 
+  cloud_firestore: ^3.1.10
+  firebase_storage: ^10.2.9
+  image_picker: ^0.8.4+11
   
 dependency_overrides:
   firebase_messaging_platform_interface: 3.1.6
