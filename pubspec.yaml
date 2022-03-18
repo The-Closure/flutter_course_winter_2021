@@ -27,7 +27,11 @@ dependencies:
   bloc: ^8.0.1
   flutter_bloc: ^8.0.0
   shared_preferences: ^2.0.13
+  firebase_core: 
+  firebase_messaging: 
   
+dependency_overrides:
+  firebase_messaging_platform_interface: 3.1.6
 
 
   cupertino_icons: ^1.0.2
