@@ -12,7 +12,6 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  //example comment anas edit
   //example comment hana
   // This widget is the root of your application.
   @override
